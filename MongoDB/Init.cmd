@@ -1,3 +1,2 @@
-cd C:\Documentos\Docker\MongoDB
-docker-compose -f mongo.yaml up -d
+docker-compose -f mongo.yml up -d
 pause
