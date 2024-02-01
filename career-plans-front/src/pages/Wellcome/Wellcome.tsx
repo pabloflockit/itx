@@ -38,7 +38,7 @@ export default function Wellcome({ handleRoute }: Props) {
           >
             <CardMedia
               component='img'
-              height='170'
+              height='130'
               image={item.image}
               alt={item.name}
             />

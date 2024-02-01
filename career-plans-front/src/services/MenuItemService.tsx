@@ -11,7 +11,7 @@ const menuItem = [
     {
         "order": 1,
         "name": "Plan Usuarios",
-        "description": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
         "route": "user-career-plans",
         "icon": "history_edu",
         "image": "/img/user-career-plan.webp",
@@ -20,7 +20,7 @@ const menuItem = [
     {
         "order": 2,
         "name": "Usuarios",
-        "description": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
         "route": "users",
         "icon": "reduce_capacity",
         "image": "/img/users.webp",
@@ -29,7 +29,7 @@ const menuItem = [
     {
         "order": 3,
         "name": "Habilidades",
-        "description": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
         "route": "skills",
         "icon": "device_hub",
         "image": "/img/skills.webp",
@@ -38,7 +38,7 @@ const menuItem = [
     {
         "order": 4,
         "name": "Planes de Carrera",
-        "description": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
         "route": "career-plans",
         "icon": "emoji_objects",
         "image": "/img/career-plans.webp",
