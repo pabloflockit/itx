@@ -1,6 +1,7 @@
 import { CreateUserDto, UpdateUserDto, User } from "../Interfaces/User.interface";
+import { URL_API_BASE } from "../helpers/helpers";
 
-const URL_API = 'http://localhost:3000/users';
+const URL_API = `${URL_API_BASE}/users`;
 
 const options = <T,>(method: string, data?: T) => {
   return {

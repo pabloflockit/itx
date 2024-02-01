@@ -37,9 +37,7 @@ export function CareerPlanProvider({ children }: Props) {
   };
 
   const updateCareerPlan = async (id: string, data: UpdateCareerPlanDto): Promise<void> => {
-    console.log({data})
     const res: CareerPlan = await updateCareerPlanService(id, data);
-    console.log({res})
     SetCareerPlans(entities.map(entity => entity._id == id ? {...entity, ...res} : entity));
   }
 

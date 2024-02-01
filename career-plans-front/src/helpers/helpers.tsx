@@ -13,3 +13,5 @@ export function arrayEquals<T>(a: T[], b: T[]): boolean {
       a.length === b.length &&
       a.every((val, index) => val === b[index]);
 }
+
+export const URL_API_BASE = "http://localhost:3000";

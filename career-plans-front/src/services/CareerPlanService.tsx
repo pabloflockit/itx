@@ -1,7 +1,7 @@
 import { CareerPlan, CreateCareerPlanDto, UpdateCareerPlanDto } from "../Interfaces/CareerPlans.interface";
+import { URL_API_BASE } from "../helpers/helpers";
 
-
-const URL_API = 'http://localhost:3000/careerplans';
+const URL_API = `${URL_API_BASE}/careerplans`;
 
 const options = <T,>(method: string, data?: T) => {
   return {

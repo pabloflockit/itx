@@ -99,7 +99,7 @@ export default function BasicModal(props: Props) {
             />
             <TextField
               id='outlined-basic'
-              label='Descripción'
+              label='Apellido'
               variant='outlined'
               required
               name='lastName'
@@ -107,7 +107,7 @@ export default function BasicModal(props: Props) {
             />
             <TextField
               id='outlined-basic'
-              label='Descripción'
+              label='Email'
               variant='outlined'
               required
               name='email'

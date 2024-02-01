@@ -29,7 +29,7 @@ export default function Wellcome({ handleRoute }: Props) {
     >
       {menuItems.map(item => {
         return (
-          <Card onClick={() => handleRoute(item.route)}
+          <Card key={item.order} onClick={() => handleRoute(item.route)}
             style={{
               display: 'flex',
               flexDirection: 'column',

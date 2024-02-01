@@ -15,13 +15,11 @@ export function MenuItems(props: Props) {
   useEffect(() => {
     setMenuItems(getAllMenuItems());
   }, []);
-
-  console.log(menuItems);
   return (
     <>
       {menuItems.map(item => {
         return (
-          <ListItemButton onClick={() => handleRoute(item.route)}>
+          <ListItemButton key={item.order} onClick={() => handleRoute(item.route)}>
             <ListItemIcon>
               <Icon>{item.icon}</Icon>
             </ListItemIcon>

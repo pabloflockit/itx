@@ -1,6 +1,7 @@
 import { CreateSkillDto, Skill, UpdateSkillDto } from '../Interfaces/Skill.interface';
+import { URL_API_BASE } from '../helpers/helpers';
 
-const URL_API = 'http://localhost:3000/skills';
+const URL_API = `${URL_API_BASE}/skills`;
 
 const options = <T,>(method: string, data?: T) => {
   return {
