@@ -1,17 +1,12 @@
 import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
-import { Divider, TextField } from '@mui/material';
+import { Divider } from '@mui/material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import { useState } from 'react';
-import { Skill } from '../../../Interfaces/Skill.interface';
 import TitleApp from '../../../shared/TitleApp';
 
-interface Props {
-  
-}
-
-export default function UserCareerPlansModal(props: Props) {
+export default function UserCareerPlansModal() {
   const [open, setOpen] = useState(false);
 
   const handleOpen = (): void => setOpen(true);
@@ -19,7 +14,7 @@ export default function UserCareerPlansModal(props: Props) {
   const handleClose = (): void => setOpen(false);
 
   const handleSubmit = () => {
-    setOpen(false)
+    setOpen(false);
   };
 
   return (
@@ -51,7 +46,6 @@ export default function UserCareerPlansModal(props: Props) {
             style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
             onSubmit={handleSubmit}
           >
-            
             <div
               style={{
                 display: 'flex',
