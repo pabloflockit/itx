@@ -36,4 +36,4 @@ lerna-debug.log*
 
 
 # MongoDB
-MongoDB/mongodb/data/*
+/MongoDB/mongodb/data/*
