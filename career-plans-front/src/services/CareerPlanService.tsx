@@ -18,6 +18,11 @@ export const getAllCareerPlanService = async (): Promise<CareerPlan[]> => {
     return await res.json();
 };
 
+export const getByIdCareerPlanService = async (id: string): Promise<CareerPlan> => {
+  const res = await fetch(`${URL_API}/${id}`, options('GET'))
+  return await res.json()
+}
+
 export const createCareerPlanService = async (data: CreateCareerPlanDto): Promise<CareerPlan> => {
   const res = await fetch(`${URL_API}`, options('POST', data));
     return await res.json();

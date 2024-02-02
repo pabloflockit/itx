@@ -1,9 +1,9 @@
 import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
 import { FormEvent, useEffect, useState } from "react";
 import { CreateUserDto, UpdateUserDto, User } from "../../../Interfaces/User.interface";
-import { useUser } from "../context/useUser";
 import { Box, Button, Divider, Modal, TextField } from "@mui/material";
 import TitleApp from '../../../shared/TitleApp';
+import { useUser } from '../context/useUser';
 
 interface Props {
   edit: boolean;

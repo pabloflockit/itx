@@ -1,20 +1,57 @@
 import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
 import { Divider } from '@mui/material';
+import Autocomplete from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
-import { useState } from 'react';
+import TextField from '@mui/material/TextField';
+import { SyntheticEvent, useEffect, useState } from 'react';
+import { UserCareerPlanAutoComplete } from '../../../Interfaces/UserCareerPlans.interface';
+import { arrayCareerNames, arrayUserNames } from '../../../helpers/helpers';
+import { getAllCareerPlanService } from '../../../services/CareerPlanService';
+import { getAllUserService } from '../../../services/UserService';
 import TitleApp from '../../../shared/TitleApp';
+import { useUserCareerPlan } from '../context/useUserCareerPlan';
 
 export default function UserCareerPlansModal() {
   const [open, setOpen] = useState(false);
+  const [users, setUsers] = useState<UserCareerPlanAutoComplete[] | null>();
+  const [user, setUser] = useState<UserCareerPlanAutoComplete | null>();
+  const [careers, setCareers] = useState<UserCareerPlanAutoComplete[] | null>();
+  const [career, setCareer] = useState<UserCareerPlanAutoComplete | null>();
+
+  const { createUserCareerPlan } = useUserCareerPlan();
+
+  useEffect(() => {
+    getAllUserService().then(data => {
+      setUsers(arrayUserNames(data));
+    });
+
+    getAllCareerPlanService().then(data => {
+      setCareers(arrayCareerNames(data));
+    });
+  }, []);
 
   const handleOpen = (): void => setOpen(true);
 
   const handleClose = (): void => setOpen(false);
 
   const handleSubmit = () => {
+    if (user && career) createUserCareerPlan(user.id, career.id);
     setOpen(false);
+  };
+
+  const handleOnChangeUser = (
+    event: SyntheticEvent<Element, Event>,
+    newValue: UserCareerPlanAutoComplete | null,
+  ) => {
+    setUser(newValue);
+  };
+  const handleOnChangeCareer = (
+    event: SyntheticEvent<Element, Event>,
+    newValue: UserCareerPlanAutoComplete | null,
+  ) => {
+    setCareer(newValue);
   };
 
   return (
@@ -46,6 +83,24 @@ export default function UserCareerPlansModal() {
             style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
             onSubmit={handleSubmit}
           >
+            <Autocomplete
+              disablePortal
+              id='usuarios-select'
+              value={user || null}
+              options={users || []}
+              renderInput={params => <TextField {...params} label='Usuario' />}
+              onChange={handleOnChangeUser}
+            />
+            <Autocomplete
+              disablePortal
+              id='careers-select'
+              value={career || null}
+              options={careers || []}
+              renderInput={params => (
+                <TextField {...params} label='Plan de Carrera' />
+              )}
+              onChange={handleOnChangeCareer}
+            />
             <div
               style={{
                 display: 'flex',

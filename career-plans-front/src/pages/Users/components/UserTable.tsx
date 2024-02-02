@@ -1,10 +1,17 @@
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
-import { IconButton, Paper, Table, TableBody, TableContainer, TableHead, TableRow } from "@mui/material";
-import { User } from "../../../Interfaces/User.interface";
-import { useUser } from "../context/useUser";
-import { StyledTableCell, StyledTableRow } from "../../../shared/StyledTable";
-
+import {
+  IconButton,
+  Paper,
+  Table,
+  TableBody,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from '@mui/material';
+import { User } from '../../../Interfaces/User.interface';
+import { StyledTableCell, StyledTableRow } from '../../../shared/StyledTable';
+import { useUser } from '../context/useUser';
 
 interface Props {
   editModal: (entity: User) => void;

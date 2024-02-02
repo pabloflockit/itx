@@ -12,9 +12,14 @@ export interface UserCareerPlan {
   __v: number;
 }
 
-export type CreateUserCareerPlanDto = Omit<
-  UserCareerPlan,
-  '_id' | 'createdAt' | 'updatedAt' | '__v'
->;
+export interface UserCareerPlanAutoComplete{
+  id: string;
+  label: string;
+}
 
-export type UpdateUserCareerPlanDto = Partial<CreateUserCareerPlanDto>;
+
+export interface CreateUserCareerPlanDto{
+  user: string,
+  careerPlan: string,
+  userSkills: string[]
+}

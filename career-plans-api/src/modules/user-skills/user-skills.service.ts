@@ -29,7 +29,6 @@ export class UserSkillService {
 
   async create(entity: CreateUserSkillDto): Promise<UserSkill> {
     try {
-      console.log(entity);
       const newEntity = new this.userSkillModel(entity);
       return await newEntity.save();
     } catch (err) {

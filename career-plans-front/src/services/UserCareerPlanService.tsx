@@ -1,6 +1,5 @@
 import {
   CreateUserCareerPlanDto,
-  UpdateUserCareerPlanDto,
   UserCareerPlan,
 } from '../Interfaces/UserCareerPlans.interface';
 import { URL_API_BASE } from '../helpers/helpers';
@@ -26,14 +25,6 @@ export const createUserCareerPlanService = async (
   data: CreateUserCareerPlanDto,
 ): Promise<UserCareerPlan> => {
   const res = await fetch(`${URL_API}`, options('POST', data));
-  return await res.json();
-};
-
-export const updateUserCareerPlanService = async (
-  id: string,
-  data: UpdateUserCareerPlanDto,
-): Promise<UserCareerPlan> => {
-  const res = await fetch(`${URL_API}/${id}`, options('PUT', data));
   return await res.json();
 };
 

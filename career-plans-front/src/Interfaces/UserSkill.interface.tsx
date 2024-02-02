@@ -9,9 +9,9 @@ export interface UserSkill {
   __v: number;
 }
 
-export type CreateUserSkillDto = Omit<
-  UserSkill,
-  '_id' | 'createdAt' | 'updatedAt' | '__v'
->;
+export interface CreateUserSkillDto {
+  skill: string;
+  status: number;
+}
 
 export type UpdateUserSkillDto = Partial<CreateUserSkillDto>;

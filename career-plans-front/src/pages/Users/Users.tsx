@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { UserProvider } from "./context/UserContext";
 import { User } from "../../Interfaces/User.interface";
 import TitleApp from "../../shared/TitleApp";
 import UserModal from "./components/UserModal";
 import { UserTable } from "./components/UserTable";
+import { UserProvider } from "./context/UserContext";
 
 export function Users() {
   const [edit, SetEdit] = useState<boolean>(false);

@@ -41,7 +41,8 @@ export class UserCareerPlansService {
   async create(entity: CreateUserCareerPlanDto): Promise<UserCareerPlan> {
     try {
       const newEntity = new this.careerPlansModel(entity);
-      return await newEntity.save();
+      const res = await newEntity.save()
+      return await this.findOne(res._id.toString());
     } catch (err) {
       throw new BadRequestException(`Se produjo un error: ${err}`);
     }

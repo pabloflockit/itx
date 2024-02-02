@@ -22,6 +22,11 @@ export const getAllUserSkillService = async (): Promise<UserSkill[]> => {
   return await res.json();
 };
 
+export const getByIdUserSkillService = async (id: string): Promise<UserSkill> =>{
+  const res = await fetch(`${URL_API}/${id}`, options('GET'))
+  return res.json();
+}
+
 export const createUserSkillService = async (
   data: CreateUserSkillDto,
 ): Promise<UserSkill> => {
